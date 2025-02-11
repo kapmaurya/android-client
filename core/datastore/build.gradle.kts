@@ -9,7 +9,8 @@
  */
 plugins {
     alias(libs.plugins.mifos.kmp.library)
-    id("kotlinx-serialization")
+    alias(libs.plugins.kotlin.serialization)
+
 }
 
 android {
