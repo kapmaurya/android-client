@@ -26,17 +26,8 @@ android {
     }
 }
 
-dependencies {
-    api(projects.core.model)
-    api(projects.core.common)
 
-    api(libs.converter.gson)
-    implementation(project(":core:common"))
-    implementation(project(":core:common"))
-    implementation(project(":core:common"))
-    implementation(project(":core:common"))
-    implementation(project(":core:common"))
-    implementation(project(":core:common"))
+
 
     kotlin{
         sourceSets{
@@ -47,7 +38,11 @@ dependencies {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.serialization.core)
 //            implementation(projects.core.common)
+                api(projects.core.model)
+                api(projects.core.common)
+
+                api(libs.converter.gson)
+
             }
         }
     }
-}

@@ -5,21 +5,21 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  *
- * See https://github.com/openMF/mobile-wallet/blob/master/LICENSE.md
+ * See https://github.com/openMF/android-client/blob/master/LICENSE.md
  */
 @file:OptIn(ExperimentalSerializationApi::class, ExperimentalSettingsApi::class)
 
 package org.mifos.core.datastore
 
-import com.russhwolf.settings.serialization.decodeValue
-import com.russhwolf.settings.serialization.decodeValueOrNull
-import kotlinx.coroutines.withContext
 import com.russhwolf.settings.ExperimentalSettingsApi
 import com.russhwolf.settings.Settings
+import com.russhwolf.settings.serialization.decodeValue
+import com.russhwolf.settings.serialization.decodeValueOrNull
 import com.russhwolf.settings.serialization.encodeValue
 import datastore.model.UserData
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 private const val USER_DATA = "userData"
 class UserPreferencesDataSource(
@@ -50,6 +50,7 @@ class UserPreferencesDataSource(
         }
     }
 }
+
 @OptIn(ExperimentalSerializationApi::class, ExperimentalSettingsApi::class)
 private fun Settings.putUserPreference(user: UserData) {
     encodeValue(
