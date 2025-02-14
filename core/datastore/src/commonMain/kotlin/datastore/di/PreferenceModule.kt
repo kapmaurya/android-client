@@ -32,6 +32,7 @@ val PreferencesModule = module {
         )
     }
 }
+
 enum class MifosDispatchers {
     Default,
     IO,

@@ -26,23 +26,19 @@ android {
     }
 }
 
-
-
-
-    kotlin{
-        sourceSets{
-            commonMain.dependencies {
-                implementation(libs.multiplatform.settings)
-                implementation(libs.multiplatform.settings.serialization)
-                implementation(libs.multiplatform.settings.coroutines)
-                implementation(libs.kotlinx.coroutines.core)
-                implementation(libs.kotlinx.serialization.core)
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation(libs.multiplatform.settings)
+            implementation(libs.multiplatform.settings.serialization)
+            implementation(libs.multiplatform.settings.coroutines)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.serialization.core)
 //            implementation(projects.core.common)
-                api(projects.core.model)
-                api(projects.core.common)
+            api(projects.core.model)
+            api(projects.core.common)
 
-                api(libs.converter.gson)
 
-            }
         }
     }
+}

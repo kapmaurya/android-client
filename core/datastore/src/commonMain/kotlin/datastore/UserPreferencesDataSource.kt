@@ -21,7 +21,9 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
+
 private const val USER_DATA = "userData"
+
 class UserPreferencesDataSource(
     private val settings: Settings,
     private val dispatcher: CoroutineDispatcher,
@@ -44,6 +46,7 @@ class UserPreferencesDataSource(
             _userInfo.value = user
         }
     }
+
     suspend fun clearInfo() {
         withContext(dispatcher) {
             settings.clear()

@@ -11,6 +11,7 @@ package org.mifos.core.datastore
 
 import datastore.model.UserData
 import kotlinx.coroutines.flow.Flow
+
 interface UserPreferencesRepository {
     val userInfo: Flow<UserData>
     suspend fun updateUser(user: UserData): Result<Unit>
