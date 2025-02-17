@@ -23,8 +23,7 @@ interface UserPreferencesRepository {
 
     suspend fun logOut(): Unit
 
-    suspend fun updateServerConfig(serverConfig: ServerConfig):Result<Unit>
+    suspend fun updateServerConfig(serverConfig: ServerConfig): Result<Unit>
 
-    suspend fun updateUserInfo(user: UserData):Result<Unit>
-
+    suspend fun updateUserInfo(user: UserData): Result<Unit>
 }

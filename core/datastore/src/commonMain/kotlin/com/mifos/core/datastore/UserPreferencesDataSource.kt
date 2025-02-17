@@ -12,19 +12,18 @@
 package com.mifos.core.datastore
 
 import com.mifos.core.model.objects.ServerConfig
+import com.mifos.core.model.objects.UserData
+import com.mifos.core.model.objects.users.User
 import com.russhwolf.settings.ExperimentalSettingsApi
 import com.russhwolf.settings.Settings
 import com.russhwolf.settings.serialization.decodeValue
 import com.russhwolf.settings.serialization.decodeValueOrNull
 import com.russhwolf.settings.serialization.encodeValue
-import com.mifos.core.model.objects.UserData
-import com.mifos.core.model.objects.users.User
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
-
 
 private const val USER_DATA = "userData"
 private const val AUTH_USER = "user_details"
@@ -34,7 +33,6 @@ private const val AUTH_USERNAME = "auth_username"
 private const val AUTH_PASSWORD = "auth_password"
 
 @OptIn(ExperimentalSerializationApi::class, ExperimentalSettingsApi::class)
-
 class UserPreferencesDataSource(
     private val settings: Settings,
     private val dispatcher: CoroutineDispatcher,
@@ -63,7 +61,6 @@ class UserPreferencesDataSource(
         ),
     )
     val userData = _userData.asStateFlow()
-
 
     private val _serverConfig = MutableStateFlow(
         settings.decodeValue(
@@ -126,8 +123,6 @@ class UserPreferencesDataSource(
             settings.remove(AUTH_USER)
         }
     }
-
-
 }
 
 @OptIn(ExperimentalSerializationApi::class, ExperimentalSettingsApi::class)
