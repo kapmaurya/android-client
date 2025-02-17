@@ -7,14 +7,14 @@
  *
  * See https://github.com/openMF/android-client/blob/master/LICENSE.md
  */
-package org.mifos.core.datastore.di
+package com.mifos.core.datastore.di
 
 import com.russhwolf.settings.Settings
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
-import org.mifos.core.datastore.UserPreferencesDataSource
-import org.mifos.core.datastore.UserPreferencesRepository
-import org.mifos.core.datastore.UserPreferencesRepositoryImpl
+import com.mifos.core.datastore.UserPreferencesDataSource
+import com.mifos.core.datastore.UserPreferencesRepository
+import com.mifos.core.datastore.UserPreferencesRepositoryImpl
 
 val PreferencesModule = module {
     factory<Settings> { Settings() }

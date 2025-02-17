@@ -7,13 +7,24 @@
  *
  * See https://github.com/openMF/android-client/blob/master/LICENSE.md
  */
-package org.mifos.core.datastore
+package com.mifos.core.datastore
 
-import datastore.model.UserData
+import com.mifos.core.model.objects.ServerConfig
+import com.mifos.core.model.objects.UserData
+import com.mifos.core.model.objects.users.User
 import kotlinx.coroutines.flow.Flow
 
 interface UserPreferencesRepository {
     val userInfo: Flow<UserData>
+    val userData: Flow<User>
+    val serverConfig: Flow<ServerConfig>
+
     suspend fun updateUser(user: UserData): Result<Unit>
+
     suspend fun logOut(): Unit
+
+    suspend fun updateServerConfig(serverConfig: ServerConfig):Result<Unit>
+
+    suspend fun updateUserInfo(user: UserData):Result<Unit>
+
 }
